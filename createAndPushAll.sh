@@ -1,11 +1,13 @@
 #!/bin/bash
+ori=`pwd`
 cd ..
 dir=`pwd`
-echo $dir
+echo "cd to " $dir
 for i in `ls $dir`
 do
-	$each=$dir/$i
+	each=$dir/$i
+	echo "for cd1 to " $each
 	cd $each
-	github-create
+	$ori/createRemoteRepo.sh
 	cd $dir
 done
